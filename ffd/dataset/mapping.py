@@ -1,10 +1,9 @@
 from __future__ import absolute_import
 
 from collections import namedtuple
-from pandas import pandas
 
-from ffd import DataReader
-from ffd import safe_get
+from ffd.dataset import DataReader
+from ffd.utils import safe_get
 
 
 class Mapping(DataReader):
@@ -28,5 +27,5 @@ class Mapping(DataReader):
     return safe_get(kmmc, self.kmmc2kmdm).kmdm
   
   def to_kmmc(self, kmdm):
-    return safe_get(kmmc, self.kmdm2kmmc).kmmc
+    return safe_get(kmdm, self.kmdm2kmmc).kmmc
     
